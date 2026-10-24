@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Góp ý Prudential – Cùng bạn gìn giữ điều quý giá</title>
+<meta name="description" content="Chia sẻ cảm nhận và góp ý về chương trình Cùng bạn gìn giữ điều quý giá, 23/10/2026 tại Oscar Sài Gòn.">
+<meta property="og:title" content="Góp ý Chương trình Tri Ân – Cùng bạn gìn giữ điều quý giá">
+<meta property="og:description" content="1 phút chia sẻ cảm nhận và góp ý để các chương trình Quý 4 hoàn thiện hơn.">
+<meta property="og:image" content="https://125thomasnguyen-art.github.io/gop-y-tri-an/banner.jpg">
+<meta name="theme-color" content="#061538">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Playfair+Display:wght@500;600&family=Dancing+Script:wght@600&display=swap">
+<style>
+/* Layout: đêm gala xanh navy – ánh vàng như banner sự kiện; banner mở đầu, thẻ câu hỏi bên dưới, mỗi màn một câu */
+:root{
+  --bg:#061538; --bg-glow:#0E2A73; --card:#0C1E4D; --card-2:#102660;
+  --ink:#F5EFE0; --muted:#AAB6D3; --line:#263F7A;
+  --gold:#D9B45A; --gold-bright:#F3D68C; --on-gold:#0A1838; --danger:#FFA08C;
+  --display:"Playfair Display", Georgia, "Times New Roman", serif;
+  --script:"Dancing Script", "Brush Script MT", cursive;
+  --body:"Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{background:var(--bg)}
+body{
+  margin:0; min-height:100vh; color:var(--ink); font-family:var(--body); font-size:16px; line-height:1.6;
+  background:
+    radial-gradient(900px 500px at 85% -10%, var(--bg-glow), transparent 70%),
+    radial-gradient(700px 420px at -10% 110%, #0B2466, transparent 70%),
+    var(--bg);
+  background-attachment:fixed;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));
+  padding-right:max(16px, env(safe-area-inset-right, 0px));
+  padding-block:max(16px, env(safe-area-inset-top, 0px)) max(40px, env(safe-area-inset-bottom, 0px));
+}
+.wrap{max-width:580px; margin:0 auto; display:flex; flex-direction:column; gap:14px}
+
+.banner{display:block; width:100%; max-width:100%; aspect-ratio:1200/675; object-fit:cover; border-radius:18px;
+  border:1px solid rgba(217,180,90,.35); box-shadow:0 24px 50px -28px #000}
+.brand{display:flex; justify-content:space-between; gap:12px; font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted)}
+.brand b{color:var(--gold); font-weight:600}
+
+.card{background:linear-gradient(180deg, var(--card-2), var(--card)); border:1px solid var(--line); border-radius:22px;
+  padding:26px 20px 20px; display:flex; flex-direction:column; gap:22px; box-shadow:0 30px 60px -36px #000}
+@media (min-width:600px){ .card{padding:36px 36px 28px} body{padding-block:40px 64px} }
+
+.progress{display:flex; gap:5px}
+.progress span{flex:1; height:4px; border-radius:2px; background:var(--line); transition:background .3s}
+.progress span.on{background:linear-gradient(90deg, var(--gold), var(--gold-bright))}
+.eyebrow{font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--gold); font-weight:600}
+
+h1,h2{font-family:var(--display); font-weight:500; margin:0; text-wrap:balance; color:var(--ink)}
+h1{font-size:clamp(27px, 7vw, 34px); line-height:1.25}
+h2{font-size:clamp(21px, 5.6vw, 26px); line-height:1.32}
+.script{font-family:var(--script); font-weight:600; color:var(--gold-bright); font-size:1.18em; line-height:1; white-space:nowrap}
+p{margin:0}
+.lead{color:var(--muted); max-width:62ch}
+.lead strong{color:var(--ink); font-weight:500}
+.stack{display:flex; flex-direction:column; gap:12px}
+.hint{font-size:14px; color:var(--muted)}
+
+/* Thẻ nhắc lại sự kiện */
+.recap{display:flex; gap:14px; align-items:center; padding:12px; border:1px solid var(--line); border-radius:16px; background:rgba(6,21,56,.45)}
+.recap button{flex:none; padding:0; border:0; background:none; cursor:zoom-in; border-radius:10px}
+.recap img{display:block; width:78px; height:117px; object-fit:cover; border-radius:10px; border:1px solid rgba(217,180,90,.4)}
+.recap-info{display:flex; flex-direction:column; gap:4px; min-width:0; font-size:14px}
+.recap-info .rname{font-family:var(--display); font-size:15px; color:var(--ink); line-height:1.35}
+.recap-info .when{color:var(--gold-bright); font-weight:600}
+.recap-info .what{color:var(--muted); font-size:13px}
+.recap-info .zoom{color:var(--gold); font-size:12.5px}
+
+.meta{display:flex; flex-wrap:wrap; gap:8px}
+.meta span{font-size:13px; padding:6px 12px; border-radius:999px; border:1px solid rgba(217,180,90,.45); color:var(--gold-bright)}
+
+/* Thang 1–5 */
+.scale{display:grid; grid-template-columns:repeat(5, 1fr); gap:8px}
+.scale button{height:60px; border-radius:14px; border:1.5px solid var(--line); background:rgba(6,21,56,.5);
+  color:var(--ink); font-family:var(--display); font-size:24px; cursor:pointer; transition:all .15s}
+.scale-ends{display:flex; justify-content:space-between; font-size:13px; color:var(--muted)}
+
+/* Đánh giá hạng mục */
+.rows{display:flex; flex-direction:column; gap:14px}
+.rate-row{display:flex; flex-direction:column; gap:8px; padding-bottom:14px; border-bottom:1px solid var(--line)}
+.rate-row:last-child{border-bottom:0; padding-bottom:0}
+.rate-name{font-weight:600; font-size:15px}
+.rate-name small{font-weight:400; color:var(--muted)}
+.chips{display:grid; grid-template-columns:repeat(4, 1fr); gap:6px}
+.chips button{min-height:40px; padding:6px 4px; border-radius:10px; border:1.5px solid var(--line); background:rgba(6,21,56,.5);
+  color:var(--ink); font:500 13px var(--body); cursor:pointer; transition:all .15s}
+button[aria-checked="true"]{background:linear-gradient(180deg, var(--gold-bright), var(--gold)); border-color:var(--gold); color:var(--on-gold); font-weight:600}
+
+/* Lựa chọn */
+.opts{display:flex; flex-direction:column; gap:8px}
+.opt{display:flex; align-items:center; gap:12px; padding:13px 16px; border:1.5px solid var(--line); border-radius:14px;
+  cursor:pointer; transition:all .15s; font-size:15px; background:rgba(6,21,56,.5)}
+.opt input{width:20px; height:20px; accent-color:var(--gold); margin:0; flex:none}
+.opt:has(input:checked){border-color:var(--gold); background:rgba(217,180,90,.12)}
+.opt.disabled{opacity:.4; cursor:not-allowed}
+.counter{color:var(--gold-bright); font-variant-numeric:tabular-nums; white-space:nowrap}
+
+textarea, input[type="text"]{width:100%; font:400 16px/1.55 var(--body); color:var(--ink); background:rgba(6,21,56,.6);
+  border:1.5px solid var(--line); border-radius:14px; padding:14px 16px; resize:vertical}
+textarea{min-height:140px}
+textarea::placeholder, input::placeholder{color:#7F8DB2}
+textarea:focus, input[type="text"]:focus{outline:none; border-color:var(--gold)}
+
+.err{color:var(--danger); font-size:14px; min-height:1.2em}
+.err:empty{display:none}
+.nav{display:flex; gap:10px}
+.btn{font:600 16px var(--body); border-radius:14px; padding:15px 22px; cursor:pointer; border:1.5px solid transparent; transition:all .15s}
+.btn-primary{flex:1; background:linear-gradient(180deg, var(--gold-bright), var(--gold)); color:var(--on-gold); box-shadow:0 10px 24px -12px rgba(243,214,140,.7)}
+.btn-primary:hover{filter:brightness(1.06)}
+.btn-ghost{background:transparent; color:var(--muted); border-color:var(--line)}
+.btn:disabled{opacity:.6; cursor:wait}
+button:focus-visible, .opt:focus-within, .btn:focus-visible{outline:2.5px solid var(--gold-bright); outline-offset:2px}
+
+.done-mark{width:72px; height:72px; color:var(--gold-bright)}
+.foot{text-align:center; font-size:12px; color:var(--muted)}
+
+section{display:flex; flex-direction:column; gap:20px; animation:rise .35s ease both}
+@keyframes rise{from{transform:translateY(8px)}to{transform:none}}
+
+/* Xem poster lớn */
+.lightbox{position:fixed; inset:0; z-index:20; background:rgba(3,10,30,.92); display:flex; align-items:center; justify-content:center;
+  padding:max(16px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) max(16px, env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); cursor:zoom-out}
+.lightbox img{max-width:100%; max-height:100%; border-radius:12px}
+@media (prefers-reduced-motion: reduce){ section{animation:none} *{transition:none!important} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <img class="banner" id="banner" src="banner.jpg" alt="Prudential – Cùng bạn gìn giữ điều quý giá">
+  <div class="brand" id="brand" hidden><span><b>Prudential</b> – Cùng bạn gìn giữ điều quý giá</span><span>Góp ý Quý 4</span></div>
+
+  <main class="card" id="card">
+    <div class="progress" id="progress" hidden></div>
+
+    <!-- Màn chào -->
+    <section id="s0">
+      <div class="stack">
+        <p class="eyebrow">Thư cảm ơn Tư vấn viên</p>
+        <h1>Cảm ơn Anh/Chị đã cùng gìn giữ <span class="script">điều quý giá</span></h1>
+        <p class="lead">Cảm ơn Anh/Chị đã đồng hành và mời khách hàng đến chương trình <strong>“Prudential – Cùng bạn gìn giữ điều quý giá”</strong>. Mỗi vị khách Anh/Chị mời đến, mỗi câu chuyện Anh/Chị kể đã góp phần làm nên một buổi tối ấm áp và trọn vẹn.</p>
+      </div>
+      <div class="recap">
+        <button type="button" id="openPoster" aria-label="Xem thư mời chương trình"><img src="poster.jpg" alt="Thư mời chương trình"></button>
+        <div class="recap-info">
+          <span class="rname">Prudential – Cùng bạn gìn giữ điều quý giá</span>
+          <span class="when">18:00 · Thứ Sáu, 23/10/2026</span>
+          <span>Khách sạn Oscar Sài Gòn</span>
+          <span class="what">Gameshow · PRUKhỏe Linh Hoạt · Rút thăm · Buffet</span>
+          <span class="zoom">Chạm để xem thư mời</span>
+        </div>
+      </div>
+      <p class="lead">Ban tổ chức rất mong được nghe <strong>cảm nhận chân tình</strong> của Anh/Chị. Điều gì làm Anh/Chị hài lòng, chúng ta sẽ giữ và phát huy. Điều gì chưa trọn vẹn, chúng ta sẽ cùng làm tốt hơn ở các chương trình Quý 4. Chỉ mất khoảng <strong>1 phút</strong>.</p>
+      <div class="meta"><span>6 câu hỏi</span><span>1 phút</span><span>Ẩn danh</span></div>
+    </section>
+
+    <!-- Câu 1 -->
+    <section id="s1" hidden>
+      <h2>Nhìn chung, Anh/Chị hài lòng với chương trình ở mức nào?</h2>
+      <div class="scale" id="q1" role="radiogroup" aria-label="Mức độ hài lòng từ 1 đến 5"></div>
+      <div class="scale-ends"><span>1 · Chưa hài lòng</span><span>5 · Rất hài lòng</span></div>
+    </section>
+
+    <!-- Câu 2 -->
+    <section id="s2" hidden>
+      <div class="stack">
+        <h2>Anh/Chị đánh giá từng phần của chương trình</h2>
+        <p class="hint">Chọn một mức cho mỗi phần.</p>
+      </div>
+      <div class="rows" id="q2"></div>
+    </section>
+
+    <!-- Câu 3: điểm sáng cần phát huy -->
+    <section id="s3" hidden>
+      <div class="stack">
+        <h2>Điều gì làm Anh/Chị và khách hàng <span class="script">hài lòng nhất?</span></h2>
+        <p class="hint">Những điểm sáng Anh/Chị chia sẻ sẽ được giữ và phát huy ở các chương trình sau.</p>
+      </div>
+      <textarea id="q3" maxlength="1500" placeholder="Ví dụ: một khoảnh khắc đáng nhớ, phần chương trình khách hàng thích nhất, một lời khen Anh/Chị nhận được…"></textarea>
+    </section>
+
+    <!-- Câu 4: cải thiện & góp ý -->
+    <section id="s4" hidden>
+      <div class="stack">
+        <h2>Điều gì cần cải thiện để Quý 4 <span class="script">trọn vẹn hơn?</span></h2>
+        <p class="hint">Quà tặng, khâu chốt hợp đồng, địa điểm, nội dung chia sẻ, gameshow, rút thăm may mắn… Anh/Chị cứ chia sẻ thẳng thắn, góp ý càng cụ thể càng dễ áp dụng.</p>
+      </div>
+      <textarea id="q4" maxlength="2000" placeholder="Ví dụ: quà nên thiết thực hơn cho gia đình, nên có thêm thời gian tư vấn riêng cho khách sau phần chia sẻ…"></textarea>
+    </section>
+
+    <!-- Câu 5: thời gian mong muốn -->
+    <section id="s5" hidden>
+      <div class="stack">
+        <h2>Nếu chương trình lần sau được tổ chức, Anh/Chị mong muốn <span class="script">vào thời gian nào?</span></h2>
+        <p class="hint">Buổi sáng hay buổi tối, thứ Sáu hay cuối tuần, tuần nào trong tháng… Thời gian phù hợp giúp Anh/Chị mời khách hàng dễ hơn.</p>
+      </div>
+      <textarea id="q5" maxlength="500" placeholder="Ví dụ: tối thứ Sáu, sáng Chủ nhật, tuần thứ 3 của tháng…"></textarea>
+    </section>
+
+    <!-- Câu 6 -->
+    <section id="s6" hidden>
+      <h2>Anh/Chị có dự định mời khách hàng tham dự chương trình Quý 4 không?</h2>
+      <div class="opts" id="q6"></div>
+    </section>
+
+    <!-- Cảm ơn -->
+    <section id="s7" hidden>
+      <svg class="done-mark" viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M31 51 L45 65 L70 37" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div class="stack">
+        <h1>Cảm ơn <span class="script">Anh/Chị!</span></h1>
+        <p class="lead">Cảm nhận và góp ý của Anh/Chị đã được ghi nhận. Ban tổ chức sẽ giữ những điều Anh/Chị hài lòng và chuẩn bị các chương trình Quý 4 chu đáo hơn.</p>
+        <p class="lead">Hẹn gặp Anh/Chị và khách hàng tại chương trình sắp tới.</p>
+      </div>
+    </section>
+
+    <p class="err" id="err" role="alert" aria-live="polite"></p>
+    <div class="nav" id="nav">
+      <button class="btn btn-ghost" id="back" type="button" hidden>Quay lại</button>
+      <button class="btn btn-primary" id="next" type="button">Bắt đầu chia sẻ</button>
+    </div>
+  </main>
+
+  <p class="foot">Khảo sát ẩn danh dành cho Tư vấn viên · Chỉ dùng để cải thiện chương trình</p>
+</div>
+
+<div class="lightbox" id="lightbox" hidden><img src="poster.jpg" alt="Thư mời chương trình Cùng bạn gìn giữ điều quý giá"></div>
+
+<script>
+/* URL Google Apps Script (web app) nhận câu trả lời. Để trống = bản xem trước, không gửi dữ liệu. */
+const ENDPOINT = "https://script.google.com/macros/s/AKfycbz02W80HjqA0AV6q5NUpda4jy_PyMOvHxw8s9Cdas4HlEgymdn14h92BNygXncQSG-w/exec";
+
+const ITEMS = [
+  ["Thời gian tổ chức", "18:00 Thứ Sáu"],
+  ["Địa điểm tổ chức", "Oscar Sài Gòn"],
+  ["Nội dung chia sẻ", "PRUKhỏe Linh Hoạt"],
+  ["Gameshow", ""],
+  ["Rút thăm may mắn", ""],
+  ["Tiệc buffet & đón tiếp", ""],
+  ["Quà tặng", "ly sứ"],
+  ["Khâu chốt hợp đồng", "tại sự kiện"]
+];
+const LEVELS = ["Chưa tốt","Tạm được","Tốt","Rất tốt"];
+const INVITE = ["Chắc chắn có","Có thể","Chưa chắc chắn"];
+const TOTAL = 6;
+const LAST = TOTAL + 1;
+
+const A = { satisfaction:null, ratings:{}, liked:"", improve:"", preferredTime:"", inviteQ4:null };
+let step = 0, sending = false;
+const $ = id => document.getElementById(id);
+const err = $("err");
+
+for (let i = 0; i < TOTAL; i++) $("progress").appendChild(document.createElement("span"));
+
+function syncGroup(group, chosen){
+  group.querySelectorAll("button").forEach(b => b.setAttribute("aria-checked", b === chosen ? "true" : "false"));
+}
+
+/* Câu 1 */
+for (let v = 1; v <= 5; v++) {
+  const b = document.createElement("button");
+  b.type = "button"; b.id = "q1-" + v; b.textContent = v;
+  b.setAttribute("role","radio"); b.setAttribute("aria-checked","false"); b.setAttribute("aria-label", v + " trên 5");
+  b.onclick = () => { A.satisfaction = v; syncGroup($("q1"), b); err.textContent = ""; };
+  $("q1").appendChild(b);
+}
+
+/* Câu 2 */
+ITEMS.forEach(([name, note], i) => {
+  const row = document.createElement("div"); row.className = "rate-row";
+  const p = document.createElement("p"); p.className = "rate-name"; p.textContent = name;
+  if (note) { const s = document.createElement("small"); s.textContent = " · " + note; p.appendChild(s); }
+  const chips = document.createElement("div"); chips.className = "chips";
+  chips.setAttribute("role","radiogroup"); chips.setAttribute("aria-label", name);
+  LEVELS.forEach((lv, j) => {
+    const b = document.createElement("button");
+    b.type = "button"; b.id = "q2-" + i + "-" + j; b.textContent = lv;
+    b.setAttribute("role","radio"); b.setAttribute("aria-checked","false");
+    b.onclick = () => { A.ratings[name] = lv; syncGroup(chips, b); err.textContent = ""; };
+    chips.appendChild(b);
+  });
+  row.append(p, chips); $("q2").appendChild(row);
+});
+
+["q3","q4","q5"].forEach(id => $(id).addEventListener("input", () => { err.textContent = ""; }));
+
+/* Câu 6 */
+INVITE.forEach((name, i) => {
+  const lab = document.createElement("label"); lab.className = "opt";
+  const inp = document.createElement("input"); inp.type = "radio"; inp.name = "q6"; inp.id = "q6-" + i; inp.value = name;
+  inp.onchange = () => { A.inviteQ4 = name; err.textContent = ""; };
+  lab.append(inp, document.createTextNode(name)); $("q6").appendChild(lab);
+});
+
+function validate(){
+  if (step === 1 && !A.satisfaction) return "Anh/Chị chọn một mức từ 1 đến 5 nhé.";
+  if (step === 2) {
+    const missing = ITEMS.map(x => x[0]).filter(n => !A.ratings[n]);
+    if (missing.length) return "Còn " + missing.length + " phần chưa đánh giá: " + missing.join(", ") + ".";
+  }
+  if (step === 3 && !$("q3").value.trim()) return "Anh/Chị chia sẻ vài dòng về điều mình hài lòng nhé.";
+  if (step === 4 && !$("q4").value.trim()) return "Anh/Chị chia sẻ vài dòng góp ý nhé. Một ý ngắn cũng rất quý.";
+  if (step === 5 && !$("q5").value.trim()) return "Anh/Chị chia sẻ thời gian mình mong muốn nhé, ví dụ: tối thứ Sáu.";
+  if (step === 6 && !A.inviteQ4) return "Anh/Chị chọn một phương án nhé.";
+  return "";
+}
+
+function render(){
+  for (let i = 0; i <= LAST; i++) $("s" + i).hidden = i !== step;
+  const inQuiz = step >= 1 && step <= TOTAL;
+  $("banner").hidden = inQuiz;
+  $("brand").hidden = !inQuiz;
+  $("progress").hidden = !inQuiz;
+  [...$("progress").children].forEach((s, i) => s.classList.toggle("on", i < step));
+  $("back").hidden = !inQuiz;
+  $("nav").hidden = step === LAST;
+  $("next").textContent = step === 0 ? "Bắt đầu chia sẻ" : step === TOTAL ? "Gửi cảm nhận" : "Tiếp tục";
+  err.textContent = "";
+  if (render.ready) window.scrollTo({ top: 0, behavior: "smooth" });
+  render.ready = true;
+}
+
+async function submit(){
+  A.liked = $("q3").value.trim();
+  A.improve = $("q4").value.trim();
+  A.preferredTime = $("q5").value.trim();
+  const payload = { submittedAt: new Date().toISOString(), ...A };
+  if (ENDPOINT && ENDPOINT.indexOf("__") !== 0) {
+    sending = true; $("next").disabled = true; $("next").textContent = "Đang gửi…";
+    try {
+      await fetch(ENDPOINT, { method:"POST", mode:"no-cors", headers:{ "Content-Type":"text/plain;charset=utf-8" }, body: JSON.stringify(payload) });
+    } catch (e) {
+      sending = false; $("next").disabled = false; $("next").textContent = "Gửi cảm nhận";
+      err.textContent = "Chưa gửi được do mạng chập chờn. Anh/Chị kiểm tra kết nối rồi bấm Gửi cảm nhận lần nữa.";
+      return;
+    }
+  }
+  step = LAST; render();
+}
+
+$("next").onclick = () => {
+  if (sending) return;
+  const msg = validate();
+  if (msg) { err.textContent = msg; return; }
+  if (step === TOTAL) { submit(); return; }
+  step++; render();
+};
+$("back").onclick = () => { if (step > 0) { step--; render(); } };
+$("openPoster").onclick = () => { $("lightbox").hidden = false; };
+$("lightbox").onclick = () => { $("lightbox").hidden = true; };
+document.addEventListener("keydown", e => { if (e.key === "Escape") $("lightbox").hidden = true; });
+
+render();
+</script>
+</body>
+</html>
